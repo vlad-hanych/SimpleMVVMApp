@@ -15,10 +15,6 @@ import javax.inject.Inject
 
 class EmployeeViewModel (private val employeeActivity: EmployeeActivity) : ActivityViewModel<EmployeeActivity>(employeeActivity),
     EmployeeViewModelAbstr {
-    /// TODO переробити відслідковувані поля по такій аналогії:
-    /*public ObservableField<String> name = new ObservableField<>();
-
-    public ObservableInt salary = new ObservableInt();*/
 
     @Inject
     lateinit var dataManager: DataManager
@@ -35,7 +31,7 @@ class EmployeeViewModel (private val employeeActivity: EmployeeActivity) : Activ
     init {
         status.set("PlYceholder.")
 
-        ///isLoaded.set(false)
+        isLoaded.set(false)
 
         App.instance.appComponent.inject(this@EmployeeViewModel)
     }
@@ -55,6 +51,8 @@ class EmployeeViewModel (private val employeeActivity: EmployeeActivity) : Activ
             }
 
             override fun onError(e: Throwable) {
+                /// TODO correctly pass data to View
+
                 /*getView()!!.onBackEndError(e.localizedMessage)*/
             }
 

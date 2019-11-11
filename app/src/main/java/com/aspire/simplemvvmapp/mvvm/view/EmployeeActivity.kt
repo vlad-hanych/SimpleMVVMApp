@@ -48,7 +48,6 @@ class EmployeeActivity : AppCompatActivity(), EmployeeViewAbstr {
         viewModel.onActivityResult(requestCode, resultCode, data!!)
     }
 
-    /// TODO винести в інтерфейс
     override fun needToDoGetRequestTest () {
         viewModel.handleDoingGetRequestTest()
     }
